@@ -1,0 +1,15 @@
+@import '../styles.scss';
+
+.wrapper-main {
+    min-height: 100vh;
+    background: $color-dark;
+    color: $color-primary;
+    letter-spacing: 0.5px;
+}
+
+.text-title {
+    margin: 0 auto;
+    padding: 4rem 0;
+    width: max-content;
+    font-weight: 500;
+}
