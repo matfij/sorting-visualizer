@@ -9,6 +9,7 @@ import { ArrayVisualizerComponent } from './components/array-visualizer/array-vi
   template: `
     <main class="wrapper-main">
       <h2 class="text-title">Sorting Visualizer</h2>
+      <button (click)="addNumber()">++</button>
       <app-array-visualizer [array]="array"></app-array-visualizer>
     </main>
   `,
@@ -17,4 +18,9 @@ import { ArrayVisualizerComponent } from './components/array-visualizer/array-vi
 })
 export class AppComponent {
   array = [1, 2, 3, 4, 5];
+
+  addNumber() {
+    const newNumber = Math.floor(10 * Math.random());
+    this.array.push(newNumber);
+  }
 }
