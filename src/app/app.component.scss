@@ -1,15 +1,35 @@
-@import '../styles.scss';
+@import "../styles.scss";
 
 .wrapper-main {
-    min-height: 100vh;
-    background: $color-dark;
-    color: $color-primary;
-    letter-spacing: 0.5px;
+  padding: 10rem 0;
+  letter-spacing: 0.5px;
+}
+
+.wrapper-app {
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+  border: 2px dashed $color-primary;
 }
 
 .text-title {
-    margin: 0 auto;
-    padding: 4rem 0;
-    width: max-content;
-    font-weight: 500;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: max-content;
+  font-weight: 500;
+}
+
+.wrapper-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button-primary {
+  width: 8rem;
+  border: 1px solid $color-primary;
+  padding: 0.5rem;
+  color: $color-primary;
+  background: $color-dark;
+  cursor: pointer;
 }

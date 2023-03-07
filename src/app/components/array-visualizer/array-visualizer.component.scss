@@ -1,6 +1,19 @@
-.text-array {
-    margin: 20px auto;
-    width: fit-content;
-    transform: rotate(270deg);
-    font-size: 0.5rem;
+@import "../../../styles.scss";
+
+.wrapper-array {
+  height: 10rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+.item-array {
+  width: 0.5rem;
+  background: $color-primary;
+}
+
+.item-array-active {
+  background: $color-secondary;
 }

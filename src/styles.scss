@@ -1,7 +1,11 @@
-$color-primary: #00FF41;
-$color-dark: #0D0208;
+$color-primary: #00ff41;
+$color-secondary: #c27231;
+$color-dark: #0d0208;
 
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: $color-dark;
+  color: $color-primary;
 }
