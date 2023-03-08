@@ -3,6 +3,10 @@ import { ArrayItem } from '../definitions/array-item';
 import { SortStrategy } from '../definitions/sort-strategy';
 
 export class BubbleSortService implements SortStrategy {
+  /**
+   * Bubble sort:
+   * https://en.wikipedia.org/wiki/Bubble_sort
+   */
   sort(array: ArrayItem[]): Observable<ArrayItem[]> {
     const arrayStates: ArrayItem[][] = [];
     for (let i = 0; i < array.length; i++) {

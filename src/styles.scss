@@ -9,3 +9,11 @@ body {
   background: $color-dark;
   color: $color-primary;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
