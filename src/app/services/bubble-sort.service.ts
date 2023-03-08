@@ -1,13 +1,8 @@
-import { Injectable } from '@angular/core';
 import { map, Observable, take, timer } from 'rxjs';
 import { ArrayItem } from '../definitions/array-item';
+import { SortStrategy } from '../definitions/sort-strategy';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class BubbleSortService {
-  constructor() {}
-
+export class BubbleSortService implements SortStrategy {
   sort(array: ArrayItem[]): Observable<ArrayItem[]> {
     const arrayStates: ArrayItem[][] = [];
     for (let i = 0; i < array.length; i++) {

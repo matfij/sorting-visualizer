@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, InjectionToken } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ArrayVisualizerComponent } from './components/array-visualizer/array-visualizer.component';
 import { ArrayItem } from './definitions/array-item';
 import { BubbleSortService } from './services/bubble-sort.service';
+import { SortService } from './services/sort.service';
+
+const SORT_STRATEGY = new InjectionToken<string>('sortStrategy');
 
 @Component({
   selector: 'app-root',
   imports: [CommonModule, ArrayVisualizerComponent],
+  providers: [{ provide: SORT_STRATEGY, useClass: BubbleSortService }],
   template: `
     <main class="wrapper-main">
       <section class="wrapper-app">
@@ -27,7 +31,10 @@ export class AppComponent {
   array: ArrayItem[] = [];
   array$ = new BehaviorSubject(this.array);
 
-  constructor(private bubbleSortService: BubbleSortService) {}
+  constructor(
+    @Inject(SORT_STRATEGY)
+    private sortService = new SortService(new BubbleSortService())
+  ) {}
 
   addNumber() {
     const newItem: ArrayItem = {
@@ -39,7 +46,7 @@ export class AppComponent {
   }
 
   sort() {
-    this.bubbleSortService.sort(this.array).subscribe((arr) => {
+    this.sortService.sort(this.array).subscribe((arr) => {
       this.array = arr;
       this.array$.next(this.array);
     });
