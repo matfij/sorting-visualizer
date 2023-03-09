@@ -21,6 +21,7 @@ const SORT_STRATEGY = new InjectionToken<string>('sortStrategy');
         <h2 class="text-title">Sorting Visualizer</h2>
         <div class="wrapper-buttons">
           <button (click)="addNumber()" class="button-primary">Extend</button>
+          <button (click)="clearArray()" class="button-primary">Clear</button>
           <select [(ngModel)]="selectedSortStrategy" class="select-primary">
             <option
               *ngFor="let strategy of SORT_STRATEGIES; let ind = index"
@@ -58,6 +59,11 @@ export class AppComponent {
       active: false,
     };
     this.array.push(newItem);
+    this.array$.next(this.array);
+  }
+
+  clearArray() {
+    this.array = [];
     this.array$.next(this.array);
   }
 

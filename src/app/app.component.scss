@@ -20,13 +20,13 @@
 }
 
 .wrapper-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 8rem 8rem;
   justify-content: center;
   gap: 0.5rem;
 }
 
 .button-primary, .select-primary {
-  width: 8rem;
   border: 1px solid $color-primary;
   padding: 0.5rem;
   color: $color-primary;
